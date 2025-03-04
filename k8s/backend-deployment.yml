@@ -7,28 +7,28 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend
+      app : backend
   template:
-    metadata:
+    metadata: 
       name: backend-pod
       namespace: chat-app
-      labels: 
+      labels:
         app: backend
     spec:
       containers:
-      - name: chatapp-backend
-        image: trainwithshubham/chatapp-backend:latest
-        ports:
+      - image: dkannaiy/
+        name: chatapp-backend
+        ports: 
         - containerPort: 5001
         env:
         - name: NODE_ENV
-          value: production
+          value: Production
         - name: MONGODB_URI
           value: "mongodb://mongoadmin:secret@mongodb:27017/dbname?authSource=admin"
         - name: JWT_SECRET
           valueFrom:
             secretKeyRef:
-              name: chatapp-secrets
-              key: jwt 
+               name: chatapp-secrets
+               key: jwt
         - name: PORT
           value: "5001"
