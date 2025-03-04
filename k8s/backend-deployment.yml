@@ -16,7 +16,7 @@ spec:
         app: backend
     spec:
       containers:
-      - image: dkannaiy/
+      - image: dkannaiy/chatapp-backend:latest
         name: chatapp-backend
         ports: 
         - containerPort: 5001
